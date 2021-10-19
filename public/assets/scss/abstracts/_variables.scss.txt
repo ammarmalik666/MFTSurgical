@@ -1,0 +1,14 @@
+// Font Family 
+$roboto: 'Roboto', sans-serif;
+$poppins: 'Poppins', sans-serif;
+$dmsans: 'DM Sans', sans-serif;
+
+
+// Responsive Variables
+$over: 'only screen and (min-width: 1600px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599.99px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399.99px)';
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199.99px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991.99px)';
+$xs:'(max-width: 767.99px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767.99px)';

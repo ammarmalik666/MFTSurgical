@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+
+
+/*
+************
+*************************
+14. Cta
+******************************************************* 
+*************************************************************** */
+
+.cta_text {
+    font-size: 18px;
+    line-height: 1.55;
+    color: #fff;
+    padding-left: 80px;
+    @media #{$xs, $md} {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+}
+
+.cta_button {
+    @media #{$xs} {
+        margin-top: 30px;
+    }
+    @media #{$sm} {
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,229 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+/*
+************
+*************************
+21. Promo
+******************************************************* 
+*************************************************************** */
+
+
+.theme_bg {
+    background-color: var(--clr-theme-1);
+}
+
+.mtm_160 {
+    margin-top: -160px;
+}
+
+.promo_box_wrapper {
+    background-color: #fff;
+    box-shadow: 0px 16px 30px 0px rgba(0, 0, 0, 0.04);
+
+    &.theme_btn {
+        margin-right: 0;
+    }
+}
+.single_promo_box {
+    padding: 55px;
+    @media #{$lg} {
+        padding: 50px;
+    }
+    @media #{$md} {
+        padding: 45px;
+    }
+    @media #{$xs} {
+        padding: 30px;
+    }
+    @media #{$sm} {
+        padding: 55px;
+    }
+    & i {
+        font-size: 75px;
+        line-height: 1;
+        margin-bottom: 20px;
+        display: block;
+        @include transition(0.3s);
+    }
+
+    & h3 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.42;
+        margin-bottom: 18px;
+
+        & a {
+            text-decoration: none;
+        }
+    }
+
+    & p {
+        line-height: 1.62;
+    }
+
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+        & i {
+            color: var(--clr-theme-1);
+        }
+        & .promo_btn {
+            color: #000;
+
+            &:hover {
+                color: var(--clr-theme-1);
+                text-decoration: underline;
+            }
+
+            &:is(.theme2_clr) {
+                color: var(--clr-theme-2);
+                opacity: 0.3;
+            }
+        }
+
+    }
+
+    &:is(.single_promo_box2) {
+        border: 3px solid #f6f6f6; 
+        background-color: #fff;
+        box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+        transition: 0.8s;
+        & > img {
+            max-width: 85px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        & i {
+            font-size: 85px;
+            color: var(--clr-theme-2);
+        }
+        & h3 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.13;
+
+            @media #{$xl} {
+                font-size: 25px;
+            }
+            @media #{$md} {
+                font-size: 25px;
+            }
+
+            @media #{$xs} {
+                font-size: 22px;
+            }
+            @media #{$sm} {
+                font-size: 30px;
+            }
+
+        }
+
+        & p {
+            line-height: 1.75;
+            font-size: 16px;
+            font-family: $dmsans;
+        }
+
+        & .promo_btn {
+            font-weight: 700;
+            font-family: $dmsans;
+            color: var(--clr-theme-2);
+            opacity: 0.3;
+        }
+
+        &:hover {
+            border-color: var(--clr-theme-2);
+            box-shadow: none;
+
+            & :is(.theme2_clr) {
+                color: var(--clr-theme-2);
+                opacity: 1;
+            }
+
+            & > i {
+                animation: icon-bounce 1s linear 1;
+            }
+
+        }
+    }
+}
+
+  
+  
+.promo_theme {
+    color: var(--clr-theme-1);
+    display: block;
+}
+
+.promo_theme2 {
+    color: var(--clr-theme-2);
+    display: block;
+}
+
+.promo_btn {
+    font-size: 14px;
+    color: #bbbbbb;
+    text-decoration: underline;
+}
+
+
+.promo_bg {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: url(../../assets/img/bg/promo_pattern.png);
+        background-position: center;
+        background-size: cover;
+        z-index: -1;
+        background-repeat: no-repeat;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+}
+
+
+.promo_cta_wrapper {
+    display: flex;
+    padding: 20px 55px;
+    align-items: center;
+    justify-content: space-between;
+    @media #{$xs}{
+        flex-direction: column;
+        padding: 30px;
+        align-items: flex-start;
+    }
+
+    & p {
+        margin-bottom: 0;
+        line-height: 1;
+        font-size: 20px;
+        color: #fff;
+        font-family: $poppins;
+        font-weight: 600;
+        margin-right: 30px;
+        line-height: 1.7;
+        @media #{$xs}{
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+    }
+
+    & .theme_btn {
+        flex: 0 0 auto;
+        
+    }
+}

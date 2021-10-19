@@ -1,0 +1,417 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+18. Portfolio
+******************************************************* 
+*************************************************************** */
+
+.theme_bg2 {
+    background-color: var(--clr-theme-2);
+}
+.overflow-x-work {
+    overflow-x: hidden;
+}
+
+.portfolio_image_inner {
+    position: relative;
+    display: block;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0;
+        content: "";
+        background-color: #000;
+        opacity: 0;
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+        visibility: hidden;
+    }
+
+    & i {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+
+.single_portfolio_image {
+    &:hover {
+        & .portfolio_image_inner {
+            &:before {
+                opacity: 0.3;
+                visibility: visible;
+                height: 100%;
+            }
+
+            & i {
+                opacity: 1;
+                visibility: visible;
+                top: 50%;
+            }
+        }
+    }
+}
+
+
+.p_caoursel_img {
+    border-radius: 20px;
+    overflow: hidden;
+    & a {
+        display: block;
+        position: relative;
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            border-radius: 20px;
+            background-image: -moz-linear-gradient( -90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+            background-image: -webkit-linear-gradient( -90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+            background-image: -ms-linear-gradient( -90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+            transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+            transform-origin: bottom left;
+            transform: scaleY(1);
+            z-index: 1;
+        }
+    }
+    & img {
+        border-radius: 20px;
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+        width: 100%;
+    }
+}
+
+
+.p_carousel_text {
+    background-color: #fff;
+    margin: 0 30px;
+    box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    margin-top: -42px;
+    transition: all 0.8s cubic-bezier(0, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.p_abs_button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #fff9e5;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+    &:hover {
+        background-color: #ffc000;
+        color: #000;
+    }
+}
+
+.p_sub_title {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.p_carousel_single {
+    position: relative;
+    &:hover {
+        & .p_caoursel_img {
+            & a {
+                display: block;
+                &:before {
+                    transform: scaleY(0);
+                }
+                & img {
+                    transform: scale3d(1.1, 1.1, 1.1);
+                }
+            }
+        }
+
+        & .p_carousel_text {
+            margin-top: -72px;
+        }
+    }
+}
+
+.black_bg_half {
+    position: relative;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: calc(100% - 480px);
+        background-color: #000;
+        z-index: -1;
+        content: "";
+    }
+}
+
+
+
+/* portfolio single */
+.cportfolio_single {
+    position: relative;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        left: 0;
+        bottom: -50px;
+        width: 100%;
+        height: calc(100% - 70px);
+        content: "";
+        background-color: #0439ab;
+        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    &:after {
+        position: absolute;
+        right: 0;
+        bottom: -100px;
+        width: 100%;
+        height: calc(100% - 110px);
+        content: "";
+        background-color: #ffc000;
+        z-index: 0;
+        clip-path: polygon(0 89%, 100% 0, 100% 100%, 0 100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+            bottom: 0;
+        }
+        &:after {
+            opacity: 1;
+            visibility: visible;
+            bottom: 0;
+        }
+        & .c_dirsign {
+            right: 110px;
+            visibility: visible;
+            opacity: 1;
+            @media #{$xl} {
+                right: 90px;
+            }
+            @media #{$lg} {
+                right: 65px;
+            }
+            @media #{$md} {
+                right: 80px;
+            }
+            @media #{$xs} {
+                right: auto;
+                left: 25px;
+            }
+            @media #{$sm} {
+                right: 30%;
+                left: auto;
+            }
+
+            & i {
+                transition: 0.3s;
+            }
+
+            &:hover {
+                & i {
+                    color: var(--clr-theme-3);
+                }
+            }
+        }
+        & .cportfolio_text {
+            bottom: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        & img {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}
+
+
+.cportfolio_buttons {
+    & button {
+        border: 1px solid #ededed;
+        background-color: transparent;
+        height: 60px;
+        padding: 0 40px;
+        border-radius: 50px;
+        color: #999;
+        font-weight: 700;
+        transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        @media #{$md} {
+            margin-right: 10px;
+        }
+        &:is(.active) {
+            border-color: #0439ab;
+            background-color: #0439ab;
+            color: #fff;
+        }
+        &:hover {
+            border-color: #0439ab;
+            background-color: #0439ab;
+            color: #fff;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.cportfolio_img {
+    & img {
+        transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+       @media #{$xs} {
+        width: 100%;
+       }
+    }
+}
+
+.cportfolio_sub {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2.2;
+    color: #fff;
+}
+
+.cportfolio_title {
+    font-size: 24px;
+    margin-bottom: 0;
+    color: #fff;
+    & a {
+        text-decoration: none;
+    }
+
+    @media #{$xl} {
+        font-size: 22px;
+    }
+    @media #{$lg} {
+        font-size: 18px;
+    }
+    @media #{$md} {
+        font-size: 20px;
+    }
+    @media #{$xs} {
+        font-size: 18px;
+    }
+    @media #{$sm} {
+        font-size: 22px;
+    }
+
+    &:is(.theme-3) {
+        &:hover {
+            & a {
+                color: var(--clr-theme-3);
+            }
+        }
+    }
+}
+
+.cportfolio_text {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    padding: 40px;
+    padding-bottom: 35px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    @media #{$lg} {
+        padding: 25px;
+        padding-bottom: 20px;
+    }
+    @media #{$md} {
+        padding: 30px;
+        padding-bottom: 25px;
+    }
+    @media #{$xs} {
+        padding: 25px;
+        padding-bottom: 20px;
+    }
+    @media #{$xs} {
+        padding: 30px;
+        padding-bottom: 25px;
+    }
+}
+
+
+
+.c_dirsign {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 160px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    color: #0439ab;
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    margin-right: -30px;
+    margin-top: calc(-30px - 8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+    z-index: 2;
+    @media #{$xl} {
+        top: 150px;
+    }
+    @media #{$lg} {
+        top: 135px;
+    }
+    @media #{$md} {
+        top: 145px;
+    }
+    @media #{$xs} {
+        top: 95px;
+        left: 0;
+        right: auto;
+    }
+    @media #{$sm} {
+        top: 50%;
+        right: 0;
+        left: auto;
+    }
+}
+
+
+  

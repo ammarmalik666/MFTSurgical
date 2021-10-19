@@ -1,0 +1,401 @@
+
+@use '../abstracts/variables' as *;
+
+
+
+/*
+************
+*************************
+11. Circular Progress
+******************************************************* 
+*************************************************************** */
+
+
+$borderWidth: 6px;
+$animationTime: .5s;
+$border-color-default: #181818;
+$border-color-fill: #181818;
+$size: 70px;
+$howManySteps: 100; //this needs to be even. 
+
+.progress_circle {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  position: relative;
+  margin-bottom: 10px;
+
+  &:is(.f_circle) {
+    &:after {
+      border: 4px solid;
+    }
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0.93);
+  }
+  > span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress-left {
+    left: 1px;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: $borderWidth;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    border-color: $border-color-fill;
+  }
+  .progress-left {
+    & .progress-bar {
+      left: 100%;
+      border-top-right-radius: ($size/2);;
+      border-bottom-right-radius: ($size/2);;
+      border-left: 0;
+      -webkit-transform-origin: center left;
+      transform-origin: center left;
+      //animation: loading-2 1.5s linear forwards 1.8s;
+    }
+  }
+  .progress-right {
+    right: 0;
+    & .progress-bar {
+      left: -100%;
+      border-top-left-radius: ($size/2);;
+      border-bottom-left-radius: ($size/2);;
+      border-right: 0;
+      -webkit-transform-origin: center right;
+      transform-origin: center right;
+      //animation: loading-1 1.8s linear forwards;
+    }
+  }
+  .progress-value {
+    display: flex;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+    div {
+      //margin-top: 10px;
+    }
+    span {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}
+
+
+
+.achievement_wrapper3 {
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$lg}{
+    justify-content: flex-start;
+  }
+
+  @media #{$xs}{
+    flex-direction: column;
+  }
+  @media #{$sm}{
+    flex-direction: row;
+  }
+
+}
+
+
+.mission_progress_single {
+
+ & .progress_circle {
+        width: 126px;
+        height: 126px;
+        line-height: 126px;
+        margin: 0;
+            & .progress-left {
+              & .progress-bar {
+                  border-top-right-radius: 75px;
+                  border-bottom-right-radius: 75px;
+                  border-width: 6px;
+
+                  &:is(.achievement_bar) {
+                    border-width: 4px;
+                  }
+
+              }
+            }
+            & .progress-right {
+              & .progress-bar {
+                  border-top-left-radius: 75px;
+                  border-bottom-left-radius: 75px;
+                  border-width: 6px;
+                  &:is(.achievement_bar) {
+                    border-width: 4px;
+                  }
+
+              }
+            }
+
+            &:is(.theme-1) {
+                  &:after {
+                      border-color: #181818;
+                      transform: scale(0.96);
+                  }
+                  & .progress-bar {
+                  border-color: var(--clr-theme-1);
+                  }
+                  & span {
+                  color: var(--clr-theme-1);
+                  }
+            }
+
+            &:is(.theme-2) {
+              &:after {
+                  border-color: #f4f4f4;
+                  transform: scale(0.98);
+              }
+              & .progress-bar {
+              border-color: #00319a;
+              }
+              & span {
+              color: #00319a;
+              }
+            }
+
+            &:is(.theme-3) {
+              &:after {
+                  border-color: #e7e7e7;
+                  transform: scale(0.98);
+              }
+              & .progress-bar {
+              border-color: var(--clr-theme-3);
+              }
+              & span {
+              color: #000;
+              }
+            }
+
+
+      
+      &:is(.achievement_circle) {
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        margin-right: 25px;
+
+        @media #{$xs} {
+          margin-right: 15px;
+        }
+        
+        &:is(.f_circle) {
+          width: 85px;
+          height: 85px;
+          line-height: 85px;
+          margin-right: 30px;
+        }
+      }
+
+      &:is(.feature_progress_single) {
+        flex: 0 0 85px;
+        height: 85px;
+        line-height: 85px;
+        margin-right: 25px;
+      }
+
+  }
+
+}
+
+
+.progress-value {
+  & .value {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--clr-theme-1);
+    font-family: $poppins;
+    & span {
+      font-size: 16px;
+      display: inline-block;
+    }
+  }
+
+  &:is(.theme-2) {
+    & .value {
+      color: var(--clr-theme-2);
+      font-size: 36px;
+      font-family: $dmsans;
+      font-weight: 700;
+      & span {
+        font-size: 14px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &:is(.is_black) {
+    & .value {
+      color: var(--clr-common-black);
+      font-size: 24px;
+      font-weight: 700;
+      & span {
+        font-size: 16px;
+        display: inline-block;
+        color: var(--clr-common-black);
+      }
+    }
+  }
+}
+
+
+
+/* This for loop creates the necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+@for $i from 1 through $howManySteps {
+	$stepName: ($i*(100 / $howManySteps));
+
+	//animation only the left side if below 50%
+	@if $i <= ($howManySteps/2) { 
+		.progress_circle[data-percentage="#{$stepName}"] {
+			.progress-right .progress-bar {
+				 animation: loading-#{$i} $animationTime linear forwards;
+			}
+			.progress-left .progress-bar {animation: 0;}
+		}
+	}
+	//animation only the right side if above 50%
+	@if $i > ($howManySteps/2)  {  
+		.progress_circle[data-percentage="#{$stepName}"] {
+			.progress-right .progress-bar {
+				animation: loading-#{($howManySteps/2)} $animationTime linear forwards; //set the animation to longest animation
+			}
+			.progress-left .progress-bar {
+      animation: loading-#{$i - ($howManySteps/2)} $animationTime linear forwards $animationTime;
+    }
+		}
+	}
+}
+
+//animation
+@for $i from 1 through ($howManySteps/2) { 
+	$degrees: (180/($howManySteps/2));
+	$degrees: ($degrees*$i);
+	@keyframes loading-#{$i}{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate($degrees);
+			transform: rotate(#{$degrees}deg);
+    }
+	}
+}
+
+
+
+.border_bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.achievement_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.achievement_single {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 40px;
+
+  @media #{$lg} {
+    margin-right: 40px;
+  }
+
+  @media #{$xs} {
+    margin-right: 0px;
+    flex: 0 0 100%;
+  }
+
+
+  @media #{$sm, $md} {
+    margin-right: 0px;
+    flex: 0 0 50%;
+  }
+
+
+  &:is(.mr_0) {
+    margin-right: 0;
+  }
+}
+.back_text {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 70px;
+  font-weight: 700;
+  color: #f7f7f7;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  z-index: -1;
+  font-family: $dmsans;
+  margin-top: -10px;
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$sm} {
+    font-size: 50px;
+  }
+}
+.achievement_text {
+  & h4 {
+    font-size: 24px;
+    font-family: $dmsans;
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 10px;
+
+    @media #{$xl} {
+      font-size: 20px;
+    }
+    @media #{$xs} {
+      font-size: 18px;
+    }
+
+  }
+
+  & span {
+    font-size: 14px;
+    color: #777;
+    font-family: $dmsans;
+  }
+}

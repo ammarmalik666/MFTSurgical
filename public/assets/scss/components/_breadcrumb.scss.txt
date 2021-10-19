@@ -1,0 +1,100 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+/*
+************
+*************************
+09. Breadcrumb
+******************************************************* 
+*************************************************************** */
+
+.breadcrumb_area {
+    padding-top: calc(160px + 100px);
+    padding-bottom: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media #{$xs, $md} {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+}
+
+.breadcrumb_overlay {
+    position: relative;
+    z-index: 1;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: -moz-linear-gradient( 90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+        background-image: -webkit-linear-gradient( 90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+        background-image: -ms-linear-gradient( 90deg, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%);
+        z-index: -1;
+    }
+}
+
+.breadcrumb-list {
+    & li {
+        list-style: none;
+        display: inline-block;
+        & a {
+            text-decoration: none;
+            color: #999;
+            font-weight: 700;
+        }
+
+        &:is(.trail-end) {
+            & span {
+                color: var(--clr-theme-3);
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.trail-item {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 15px;
+    &:after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 1px;
+        height: 14px;
+        content: "";
+        background-color: #8b8b8b;
+        transform: translateY(-50%);
+    }
+
+    &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.breadcrumb_title {
+    font-size: 80px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.13;
+    @media #{$lg} {
+        font-size: 70px;
+    }
+    @media #{$md} {
+        font-size: 60px;
+    }
+    @media #{$xs} {
+        font-size: 38px;
+    }
+    @media #{$sm} {
+        font-size: 46px;
+    }
+}

@@ -1,0 +1,455 @@
+  /*
+************
+*************************
+
+   Template Name: Tionco - Construction HTML Template
+   Description: Tionco - Construction HTML Template
+   Author: Bdevs
+   Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+CSS INDEX
+===================
+
+01. common
+02. Header
+03. Hero
+04. Slider
+05. About
+06. Animated
+07. Blog
+08. Brand
+09. Breadcrumb
+10. Button
+11. Circular Progress
+12. Contact
+13. Counter
+14. Cta
+15. FAQs
+16. News
+17. Newsletter
+18. Portfolio
+19. Pricing
+20. Progress
+21. Promo
+22. Section Title
+23. Service
+24. Sidebar
+25. Single
+26. Team
+27. Testimonial
+28. Back To Top
+29. Footer
+
+******************************************************* 
+*************************************************************** */
+
+
+@use './variables' as *;
+@use './mixins' as *;
+@use './colors' as *;
+
+
+/*
+************
+*************************
+01. common
+******************************************************* 
+*************************************************************** */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+ body {
+    font-family: $roboto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--clr-body-text);
+    font-size: 16px;
+}
+
+.img,img {
+	max-width: 100%;
+	@include transition(.3s);
+}
+.f-left {
+	float: left
+}
+.f-right {
+	float: right
+}
+.fix {
+	overflow: hidden
+}
+a,
+.button {
+	@include transition(.3s);
+}
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+a:focus,
+a:hover
+{
+	color: inherit;
+	text-decoration: none;
+}
+a,
+button {
+	color: inherit;
+	outline: medium none;
+}
+button:focus,input:focus,input:focus,textarea,textarea:focus{outline: 0}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $poppins;
+	color: var(--clr-body-heading);
+	margin-top: 0px;
+	font-weight: 600;
+	text-transform: normal;
+    margin-bottom: 15px;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+}
+h1 {
+	font-size: 60px;
+}
+h2 {
+	font-size: 45px;
+}
+h3 {
+	font-size: 38px;
+}
+h4 {
+	font-size: 28px;
+}
+h5 {
+	font-size: 20px;
+}
+h6 {
+	font-size: 16px;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.86;
+	margin-bottom: 15px;
+}
+hr {
+	border-bottom: 1px solid var(--clr-common-hr_border);
+	border-top: 0 none;
+	margin: 35px 0;
+	padding: 0;
+    opacity: 1;
+}
+label {
+	color: var(--clr-body-heading);
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+}
+*::-moz-selection {
+	background-color: var(--clr-body-heading);
+	color: var(--clr-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+	background-color: var(--clr-body-heading);
+	color: var(--clr-common-white);
+	text-shadow: none;
+}
+::selection {
+	background-color: var(--clr-common-black);
+	color: var(--clr-common-white);
+	text-shadow: none;
+}
+
+
+
+/* <<<<<<<    Input Placeholder   >>>>>>>>> */
+
+input {
+	@include placeholder {
+		color: var(--clr-common-black);
+		font-size: 14px;
+		opacity: 1;
+	}
+}
+
+
+
+
+
+/* <<<<<<<    Common Classes   >>>>>>>>> */
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+.w_img {
+    & img {
+        width: 100%;
+    }
+}
+.p-rel {
+    position: relative;
+}
+.p-abs {
+    position: absolute;
+}
+.text_center {
+    text-align: center;
+}
+.text_sm_center {
+    @media #{$sm} {
+        text-align: center;
+    }
+}
+.text_md_center {
+    @media #{$md} {
+        text-align: center;
+    }
+}
+.text_lg_center {
+    @media #{$lg} {
+        text-align: center;
+    }
+}
+.text_xl_center {
+    @media #{$xl} {
+        text-align: center;
+    }
+}
+.text_xxl_center {
+    @media #{$xxl} {
+        text-align: center;
+    }
+}
+.text_start {
+    text-align: left;
+}
+.text_sm_start {
+    @media #{$sm} {
+        text-align: left;
+    }
+}
+.text_md_start {
+    @media #{$md} {
+        text-align: left;
+    }
+}
+.text_lg_start {
+    @media #{$lg} {
+        text-align: left;
+    }
+}
+.text_xl_start {
+    @media #{$xl} {
+        text-align: left;
+    }
+}
+.text_xxl_start {
+    @media #{$xxl} {
+        text-align: left;
+    }
+}
+.text_end {
+    text-align: right;
+}
+.text_sm_end {
+    @media #{$sm} {
+        text-align: right;
+    }
+}
+.text_md_end {
+    @media #{$md} {
+        text-align: right;
+    }
+}
+.text_lg_end {
+    @media #{$lg} {
+        text-align: right;
+    }
+}
+.text_xl_end {
+    @media #{$xl} {
+        text-align: right;
+    }
+}
+.text_xxl_end {
+    @media #{$xxl} {
+        text-align: right;
+    }
+}
+
+
+/* <<<<<<<    Overlay   >>>>>>>>> */
+
+[data-overlay] {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+    }
+}
+
+[data-overlay="light"] {
+    &::before {
+        background-color: var(--clr-common-white);
+    }
+}
+[data-overlay="dark"] {
+    &::before {
+        background-color: var(--clr-common-black);
+    }
+}
+
+[data-opacity="1"] {
+    &::before {
+        opacity: 0.1;
+    }
+}
+[data-opacity="2"] {
+    &::before {
+        opacity: 0.2;
+    }
+}
+[data-opacity="3"] {
+    &::before {
+        opacity: 0.3;
+    }
+}
+[data-opacity="4"] {
+    &::before {
+        opacity: 0.4;
+    }
+}
+[data-opacity="5"] {
+    &::before {
+        opacity: 0.5;
+    }
+}
+[data-opacity="6"] {
+    &::before {
+        opacity: 0.6;
+    }
+}
+[data-opacity="7"] {
+    &::before {
+        opacity: 0.7;
+    }
+}
+[data-opacity="8"] {
+    &::before {
+        opacity: 0.8;
+    }
+}
+[data-opacity="9"] {
+    &::before {
+        opacity: 0.9;
+    }
+}
+
+
+
+
+/* <<<<<<<    Declaration   >>>>>>>>> */
+
+:root {
+    /**
+    @color declaration
+    */
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+
+
+
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+    // color
+     .text-#{$color}-#{$shade} {
+         color: $value;
+     }
+    // background-color
+     .bg-#{$color}-#{$shade} {
+        color: $value;
+    }
+}}
+
+
+
+
+
+/* <<<<<<<    Margin & Padding>>>>>>>>> */
+
+@for $i from 1 through 40 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+
+@for $i from 1 through 40 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+
+@for $i from 1 through 40 {
+    .ml-#{5 * $i}{margin-left: 5px * $i;}
+}
+
+@for $i from 1 through 40 {
+    .mr-#{5 * $i}{margin-right: 5px *$i;}
+}
+
+@for $i from 1 through 40 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+
+@for $i from 1 through 40 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+
+@for $i from 1 through 40 {
+    .pl-#{5 * $i}{padding-left: 5px *$i;}
+}
+
+@for $i from 1 through 40 {
+    .pr-#{5 * $i}{padding-right: 5px *$i;}
+}

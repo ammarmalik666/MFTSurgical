@@ -1,0 +1,151 @@
+@use '../abstracts/variables' as *;
+
+
+/*
+************
+*************************
+13. Counter
+******************************************************* 
+*************************************************************** */
+
+.counter_bg_left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52.6%;
+    height: 100%;
+}
+
+.counterup_area {
+    min-height: 620px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @media #{$xl, $lg, $md, $xs} {
+        background-size: cover;
+    }
+}
+
+.counter_content_wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    @media #{$xl, $lg} {
+        width: 100%;
+
+    }
+    @media #{$md, $xs} {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+.single_counter {
+    padding: 80px;
+    flex: 0 0 370px;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+
+    @media #{$xl, $lg} {
+        flex: 0 0 33.333%;
+        
+    }
+
+    
+    @media #{$md} {
+        flex: 0 0 50%;
+        padding: 60px;
+        
+    }
+    @media #{$xs} {
+        flex: 0 0 100%;
+        padding: 60px;
+        
+    }
+    @media #{$sm} {
+        flex: 0 0 50%;
+        padding: 60px;
+        
+    }
+
+    &:is(.single_counter1) {
+        background-color: #0f0f0f;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    }
+    &:is(.single_counter2) {
+        background-color: #080808;
+        &:hover {
+            @media #{$xxl, $xl, $lg, $md, $xs} {
+                background-color: rgba(0,0,0,0.8);
+            }
+        }
+    }
+    &:is(.single_counter3) {
+        background-color: #000;
+        &:hover {
+            @media #{$xxl, $xl, $lg, $md, $xs} {
+                background-color: rgba(0,0,0,0.8);
+            }
+        }
+    }
+
+    & i {
+        font-size: 85px;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: #444;
+        transform-origin: left bottom;
+        transform: scaleX(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        z-index: -1;
+    }
+    &:hover {
+        &:before {
+            opacity: 0.5;
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        & > i {
+            animation: wobble-vertical 1s linear 1;
+        }
+    }
+}
+
+.counter_title {
+    font-size: 60px;
+    color: #efb401;
+    font-weight: 700;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    line-height: 1;
+}
+
+.counter_info {
+    font-size: 16px;
+    color: #bebebe;
+    line-height: 1.75;
+}
+
+  

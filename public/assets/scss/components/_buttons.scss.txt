@@ -1,0 +1,124 @@
+
+/*
+************
+*************************
+10. Button
+******************************************************* 
+*************************************************************** */
+
+@use '../abstracts/variables' as *;
+
+.consult_btn {
+    height: 50px;
+    line-height: 44px;
+    background-color: var(--clr-theme-1);
+    display: inline-block;
+    padding: 0 41px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    margin-bottom: 6px;
+
+    &:hover {
+        border-color: var(--clr-theme-1);
+        color: var(--clr-theme-1);
+        background-color: transparent;
+    }
+}
+.hero_buttons {
+    & .theme_btn {
+        margin-right: 20px;
+        &:nth-child(2) {
+            margin-right: 0;
+            @media #{$xs} {
+                margin-top: 25px;
+            }
+            @media #{$sm} {
+                margin-top: 0px;
+            }
+        }
+    }
+}
+.single_btn {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    height: 60px;
+    padding: 0 45px;
+    color: #000;
+    background-color: #fff;
+    line-height: 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    & i {
+        margin-left: 10px;
+        font-weight: 300;
+    }
+
+    &:hover {
+        background-color: #ffc000;
+        color: #fff;
+    }
+}
+
+.theme_btn {
+    display: inline-block;
+    height: 60px;
+    background-color: var(--clr-theme-1);
+    line-height: 60px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    padding: 0 60px;
+    text-decoration: underline;
+    &:is(.is_border) {
+        border: 2px solid transparent;
+        line-height: 56px;
+        &:hover {
+            background-color: transparent;
+            border-color: var(--clr-theme-1);
+            color: var(--clr-theme-1);
+            text-decoration: underline;
+        }
+    }
+
+    &:is(.black_bg) {
+        background-color: #000;
+
+        &:is(.is_border) {
+            border: 2px solid transparent;
+            line-height: 56px;
+            &:hover {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+                text-decoration: underline;
+            }
+            &:is(.no_decorateion) {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &:is(.soft_theme) {
+        background-color: #fff7eb;
+        color: var(--clr-theme-1);
+
+        &:hover {
+            text-decoration: underline;
+            color: #fff;
+            background-color: var(--clr-theme-1);
+        }
+    }
+
+
+
+}

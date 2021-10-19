@@ -1,0 +1,22 @@
+
+
+$colors: (
+    common: (
+        white: #fff,
+        black: #000,
+        soft_black: #0a0a0a,
+        hr_border: #e6e6e6,
+    ),
+    body: (
+        heading: #000,
+        text: #777,
+        soft_bg: #f6f6f6,
+    ),
+    theme: (
+        1: #ff9600,
+        2: #0439ab,
+        3: #ffc000,
+        4: #00319a,
+    ),
+)
+

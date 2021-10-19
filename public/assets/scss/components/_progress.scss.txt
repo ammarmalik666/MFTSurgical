@@ -1,0 +1,49 @@
+@use '../abstracts/colors' as *;
+
+
+/*
+************
+*************************
+20. Progress
+******************************************************* 
+*************************************************************** */
+
+.team_progress_single {
+    overflow: hidden;
+    & span {
+        font-size: 18px;
+        color: #111111;
+        font-weight: 700;
+        display: inline-block;
+        
+    }
+}
+  
+.progress {
+
+    &:is(.team_progress) {
+        margin-top: 15px;
+        height: 4px;
+        background-color: #f1f1f1;
+        & .progress-bar {
+            &:is(.theme-1) {
+                background-color: var(--clr-theme-1);
+            }
+            &:is(.theme-2) {
+                background-color: var(--clr-theme-2);
+            }
+        }
+    }
+
+
+  }
+
+.progress_value {
+    float: right;
+    &:is(.theme-1) {
+        color: var(--clr-theme-1);
+    }
+    &:is(.theme-2) {
+        color: var(--clr-theme-2);
+    }
+}

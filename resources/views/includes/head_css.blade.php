@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/flaticon.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="stylesheet" href="assets/css/swipper.css">
+<link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+<link rel="stylesheet" href="assets/css/icofont.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
