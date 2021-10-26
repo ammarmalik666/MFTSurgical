@@ -51,15 +51,27 @@
         <div class="collapse " id="pagesExamples">
           <ul class="nav ms-4 ps-3">
             <li class="nav-item">
-              <a class="nav-link" href="/admin/all/products">
-                <span class="sidenav-mini-icon"> All </span>
-                <span class="sidenav-normal"> All Products </span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/admin/add/products">
                 <span class="sidenav-mini-icon"> Add </span>
                 <span class="sidenav-normal"> Add Products </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/all/products">
+                <span class="sidenav-mini-icon"> Active </span>
+                <span class="sidenav-normal"> Active Products </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/archive/products">
+                <span class="sidenav-mini-icon"> Archive </span>
+                <span class="sidenav-normal"> Archived Products </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/trash/products">
+                <span class="sidenav-mini-icon"> Trash </span>
+                <span class="sidenav-normal"> Trash Products </span>
               </a>
             </li>
           </ul>
