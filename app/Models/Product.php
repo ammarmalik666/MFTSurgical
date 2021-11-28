@@ -15,6 +15,8 @@ class Product extends Model
         'product_description',
         'product_photo',
         'product_category',
+        'tags',
+        'salt',
         'status'
     ]; 
 }

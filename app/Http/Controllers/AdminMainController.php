@@ -38,10 +38,10 @@ class AdminMainController extends Controller
         $category_type   = $request->category_type;
         $parent_category = $request->parent_category;
         $status          = 1;
-        
+        $salt            = str_replace(' ', '-', $category_name);
         $request->validate([
             'category_name' => 'required|max:250',
-            'image'         => 'required|mimes:jpeg,jpg,png,gif|max:3000kb',
+            'image'         => 'required|mimes:jpeg,jpg,png,gif|max:3000',
             'category_type' => 'required',
         ]);
 
@@ -62,6 +62,7 @@ class AdminMainController extends Controller
                 'category_type'     => $category_type,
                 'parent_category'   => $parent_category,
                 'status'            => $status,
+                'salt'              => $salt,
             ];
             $category = Category::create($array);
             if ($category) {
@@ -75,6 +76,7 @@ class AdminMainController extends Controller
 
         }
     }
+    
     public function all_products_view()
     {
         $products = Product::where('status', '=', 1)->orderBy('id', 'desc')->get();
@@ -102,6 +104,9 @@ class AdminMainController extends Controller
         $product_photo        =  $request->image;
         $product_category     =  $request->product_category;
         $product_code         =  "MFT-".$code;
+        $product_tags         =  $request->tags;
+        $salt                 = str_replace(' ', '-', $product_name);
+
         // return $request;
         $request->validate([
             'product_name'         =>  'required|max:250',
@@ -124,7 +129,9 @@ class AdminMainController extends Controller
                 'product_description'   =>    $product_description,
                 'product_photo'         =>    $name,
                 'product_category'      =>    $product_category,
+                'tags'                  =>    $product_tags,
                 'status'                =>    $status,
+                'salt'                  =>    $salt,
             ];
             $product = Product::create($array);
             if ($product) {
@@ -195,14 +202,12 @@ class AdminMainController extends Controller
                 $orignal_name = $file->getClientOriginalName();
                 $name = time().rand(1,100000000).'.'.$file->extension();
                 $move_file = $file->move(public_path().'/uploads/products', $name);
-                $status = 1;
                 $array = [
                     'product_name'          =>    $product_name,
                     'product_code'          =>    $product_code,
                     'product_description'   =>    $product_description,
                     'product_photo'         =>    $name,
                     'product_category'      =>    $product_category,
-                    'status'                =>    $status,
                 ];
                 $product = Product::where('id', $product_id)->update($array);
                 if ($product) {
@@ -287,5 +292,45 @@ class AdminMainController extends Controller
                 $obj['cat_name'] = $cat_name;
             }
         return view('admin.trash-products', compact('products'));
+    }
+    public function product_enquiries_view()
+    {
+        return view('admin.product-enquirires');
+    }
+    public function contact_enquiries_view()
+    {
+        return view('admin.contact-enquirires');
+    }
+    public function all_subscribers_view()
+    {
+        return view('admin.subscribers');
+    }
+    public function product_view($id)
+    {
+        $product_id = $id;
+        $products = Product::where('id', $product_id)->get();
+        if ($products->count() == 0) {
+            return redirect()->back();
+        }else{
+            foreach($products as $obj)
+            {
+                $id = $obj->product_category;
+
+                $product_categories = Category::where('id', $id)->get();
+                $cat_name = $product_categories[0]->category_name;
+                $obj['cat_name'] = $cat_name;
+            }
+        }
+        return view('admin.view-product-details', compact('products'));
+    }
+    public function product_delete(Request $request)
+    {
+        $product_id = $request->id;
+        $delete_product = Product::where('id', '=', $product_id)->delete();
+        if ($delete_product) {
+            return redirect()->back()->withErrors('product_deleted');
+        }else{
+            return redirect()->back()->withErrors('product_not_deleted');
+        }
     }
 }

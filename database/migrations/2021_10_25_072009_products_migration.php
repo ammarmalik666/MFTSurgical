@@ -20,7 +20,9 @@ class ProductsMigration extends Migration
             $table->longText('product_description');
             $table->string('product_photo');
             $table->string('product_category');
+            $table->longText('tags');
             $table->integer('status');
+            $table->string('salt');
             $table->timestamps();
         });
     }

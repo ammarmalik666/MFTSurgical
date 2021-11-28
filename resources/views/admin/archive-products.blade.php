@@ -51,14 +51,16 @@
               @foreach ($products as $product)
                 <tr>
                   <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                    <a href="/admin/view/{{ $product->id }}/product">
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
+                        </div>
                       </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
-                      </div>
-                    </div>
+                    </a>
                   </td>
                   <td>
                     <p class="text-sm text-secondary mb-0">{{ $product->product_code }}</p>
@@ -92,13 +94,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Archive Product</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Unarchive Product</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Are you sure you want to move <b id="name" class="text-success"></b> into archive?
+        Are you sure you want to move <b id="name" class="text-success"></b> into active products?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>

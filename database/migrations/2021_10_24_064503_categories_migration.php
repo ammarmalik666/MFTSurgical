@@ -20,6 +20,7 @@ class CategoriesMigration extends Migration
             $table->string('category_image');
             $table->string('parent_category')->nullable();
             $table->integer('status');
+            $table->string('salt');
             $table->timestamps();
         });
     }

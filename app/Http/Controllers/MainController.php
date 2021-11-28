@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Product;
+
 
 class MainController extends Controller
 {
@@ -16,7 +19,8 @@ class MainController extends Controller
     }
     public function products_view()
     {
-        return view('our-products');
+        $categories = Category::where('status', '=', 1)->where('parent_category' , '=', null)->get();
+        return view('our-products', compact('categories'));
     }
     public function cateogry_products_view()
     {

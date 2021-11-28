@@ -93,7 +93,7 @@
             </span>
           @enderror
           <div class="mt-3">
-            <button type="submit" class="btn bg-gradient-primary m-0">Add Product</button>
+            <button type="submit" class="btn bg-gradient-primary m-0">Update Product</button>
           </div>
         </form>
       </div>

@@ -60,7 +60,7 @@
             </span>
           @enderror
           <label for="ProductDescription" class="mt-2 form-label">Product Description</label>
-           <textarea class="form-control" id="ProductDescription" placeholder="Enter product description"name="product_description" cols="30" rows="5" value="{{ old('product_description') }}"></textarea>
+          <textarea class="form-control" id="ProductDescription" placeholder="Enter product description"name="product_description" cols="30" rows="5" value="{{ old('product_description') }}"></textarea>
           @error('product_description')
             <span>
               <p style="font-size:13px!important; margin-bottom:0px!important; color: #fd0710!important;">{{ $message }}*</p>
@@ -87,6 +87,13 @@
             @endif
           </select>
           @error('product_category')
+            <span>
+              <p style="font-size:13px!important; margin-bottom:0px!important; color: #fd0710!important;">{{ $message }}*</p>
+            </span>
+          @enderror
+          <label class="mt-4 form-label" for="ProductTags">Project Tags</label>
+          <input type="text" class="form-control" id="ProductTags" placeholder="Enter tags here" name="tags" value="{{ old('tags') }}">
+          @error('tags')
             <span>
               <p style="font-size:13px!important; margin-bottom:0px!important; color: #fd0710!important;">{{ $message }}*</p>
             </span>

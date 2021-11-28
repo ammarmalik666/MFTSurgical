@@ -99,14 +99,16 @@
               @foreach ($products as $product)
                 <tr>
                   <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                    <a href="/admin/view/{{ $product->id }}/product">
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
+                        </div>
                       </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
-                      </div>
-                    </div>
+                    </a>
                   </td>
                   <td>
                     <p class="text-sm text-secondary mb-0">{{ $product->product_code }}</p>

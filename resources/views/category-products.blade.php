@@ -27,159 +27,181 @@
         </div>
     </div>
 </section>
-<!-- breadcrumb_area-end -->
-
-<div class="team_area pt-120 pb-90 fix">
+<div class="team_area pt-90 pb-90 fix">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-12">
                 <div class="t_person_info mb-40 text-center">
-                    <h2 class="t_single_title">Our Category</h2>
+                    <h2 class="t_single_title">Our Products</h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
-                    </div>
+            <div class="col-lg-3 col-md-3">
+                
+                <div>
+                    <ul>
+                        
+                    </ul>
                 </div>
             </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
+            <div class="col-lg-9 col-md-9">
+                <div class="row">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_1.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">Founder</span>
-                        <h6 class="member_name">
-                            <a href="/products-detail">Humble E. Eivior</a>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-3 col-md-4">
-                <div class="single_team mb-30">
-                    <div class="single_team_img w_img">
-                        <img src="assets/img/team/team3_2.jpg" alt="img">
-                    </div>
-                    <div class="team_content">
-                        <span class="m_designation theme-3">CEO</span>
-                        <h5 class="member_name"><a href="/products-detail">Mirandra H. Halim</a></h5>
+                    <div class="col-xxl-3 col-lg-3 col-md-4">
+                        <div class="single_team mb-30">
+                            <div class="single_team_img w_img">
+                                <img src="assets/img/team/team3_1.jpg" alt="img">
+                            </div>
+                            <div class="team_content">
+                                <span class="m_designation theme-3">Founder</span>
+                                <h6 class="member_name">
+                                    <a href="/products-detail">Humble E. Eivior</a>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -15,5 +15,6 @@ class Category extends Model
         'category_image',
         'parent_category',
         'status',
+        'salt',
     ];
 }

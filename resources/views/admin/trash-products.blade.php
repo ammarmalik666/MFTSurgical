@@ -92,21 +92,23 @@
             @if ($products->Count() == 0)
               <tr>
                 <td colspan="4" class="align-middle text-center">
-                  <p class="text-sm mb-0">No live product yet.</p>
+                  <p class="text-sm mb-0">No trash product yet.</p>
                 </td>
               </tr>
             @else
               @foreach ($products as $product)
                 <tr>
                   <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                    <a href="/admin/view/{{ $product->id }}/product">
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <img src="/uploads/products/{{ $product->product_photo }}" class="avatar avatar-md me-3" alt="table image">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
+                        </div>
                       </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">{{ $product->product_name }}</h6>
-                      </div>
-                    </div>
+                    </a>
                   </td>
                   <td>
                     <p class="text-sm text-secondary mb-0">{{ $product->product_code }}</p>
@@ -170,11 +172,11 @@
         </button>
       </div>
       <div class="modal-body">
-        Are you sure you want to move <b id="name" class="text-danger"></b> into trash?
+        Are you sure you want to delete <b id="name" class="text-danger"></b> permanently?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-        <form action="{{ route('delete.product_trash') }}" method="POST">
+        <form action="{{ route('delete.product_delete_permanent') }}" method="POST">
           @csrf
           <input type="hidden" name="id" id="id" value="">
           <button type="submit" class="btn bg-gradient-danger">Delete</button>

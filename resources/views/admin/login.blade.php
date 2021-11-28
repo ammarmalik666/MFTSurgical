@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/admin/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/admin/assets/img/favicon.png">
   <title>
-    Soft UI Dashboard PRO by Creative Tim
+    MFT Surgical
   </title>
   <base href="/">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -17,40 +17,60 @@
   <link href="/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
   <link id="pagestyle" href="/admin/assets/css/soft-ui-dashboard.min.css?v=1.0.4" rel="stylesheet" />
 </head>
-
 <body class="">
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-100">
         <div class="container">
           <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+            <div class="col-xl-6 col-lg-6 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+              @if($errors->any())
+                @if($errors->first() == 'pass_not_match')
+                  <div class="alert alert-danger" role="alert">
+                    Please enter correct password.
+                  </div>
+                @elseif($errors->first() == 'email_not_match')
+                  <div class="alert alert-danger" role="alert">
+                    Please enter correct email..
+                  </div>
+                @endif
+              @endif
               <div class="card card-plain">
+                {{-- <div>
+                  <img src="" alt="">
+                </div> --}}
                 <div class="card-header pb-0 text-start">
                   <h4 class="font-weight-bolder">Sign In</h4>
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form" method="POST" action="{{ route('admin.login') }}">
+                    @csrf
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email" name="email">
+                      @error('email')
+                        <span>
+                            <p class="mb-0" style="font-size:13px!important; color: #fd0710!important;">{{ $message }}*</p>
+                        </span>
+                      @enderror
                     </div>
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password">
+                      @error('password')
+                        <span>
+                            <p class="mb-0" style="font-size:13px!important; color: #fd0710!important;">{{ $message }}*</p>
+                        </span>
+                      @enderror
                     </div>
                     <div class="text-center">
-                      <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                     </div>
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
-                    Don't have an account?
-                    <a href="javascript:;" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    Don't remeber password?
+                    <a href="javascript:void(0);" class="text-primary text-gradient font-weight-bold">Reset Password</a>
                   </p>
                 </div>
               </div>

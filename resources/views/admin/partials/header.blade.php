@@ -56,7 +56,7 @@
               </ul>
             </li>
             <li class="nav-item d-flex align-items-center">
-              <a href="../../pages/authentication/signin/illustration.html" class="nav-link text-body font-weight-bold px-0" target="_blank">
+              <a href="/admin/logout" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Logout</span>
               </a>

@@ -16,6 +16,10 @@ class AdminAuth
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!session()->has('AdminEmail'))
+        {
+            return redirect('/admin/login');
+        }
         return $next($request);
     }
 }
